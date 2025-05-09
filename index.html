@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopCart</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="brand">
+        <a href="/">ShopCart</a>
+      </div>
+      <div class="nav-items">
+        <a href="/">Home</a>
+        <a href="./signup/login.html" id="loginLink">Login/Signup</a>
+        <a href="#" id="cartLink">My Cart (<span id="cartCount">0</span>)</a>
+      
+        <!-- Welcome dropdown (hidden initially) -->
+        <div id="userMenu" class="dropdown" style="display: none;">
+          <span class="dropdown-toggle" id="userName">Welcome, </span>
+          <div class="dropdown-content">
+            <a href="#" id="logoutBtn">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <aside>
+        <section>
+          <title>Colors</title>
+          <ul id="colorFilters">
+            <li>
+              <input id="red" type="checkbox" name="color" value="red" />
+              <label for="red">Red</label>
+            </li>
+            <li>
+              <input id="blue" type="checkbox" name="color" value="blue" />
+              <label for="blue">Blue</label>
+            </li>
+            <li>
+              <input id="green" type="checkbox" name="color" value="green" />
+              <label for="green">Green</label>
+            </li>
+            <li>
+              <input id="black" type="checkbox" name="color" value="black" />
+              <label for="black">Black</label>
+            </li>
+            <li>
+              <input id="white" type="checkbox" name="color" value="white" />
+              <label for="white">White</label>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <title>Sizes</title>
+          <ul id="sizeFilters">
+            <li>
+              <input id="s" type="checkbox" name="size" value="S" />
+              <label for="s">S</label>
+            </li>
+            <li>
+              <input id="m" type="checkbox" name="size" value="M" />
+              <label for="m">M</label>
+            </li>
+            <li>
+              <input id="l" type="checkbox" name="size" value="L" />
+              <label for="l">L</label>
+            </li>
+            <li>
+              <input id="xl" type="checkbox" name="size" value="XL" />
+              <label for="xl">XL</label>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <title>Rating</title>
+          <input
+            type="range"
+            id="ratingFilter"
+            min="0"
+            max="5"
+            value="0"
+            list="values"
+          />
+          <datalist id="values">
+            <option value="0" label="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5" label="5"></option>
+          </datalist>
+          <div id="currentRating">0+</div>
+        </section>
+        <section>
+          <title>Price Range</title>
+          <ul id="priceFilters">
+            <li>
+              <input id="0-25" type="checkbox" name="prange" value="0-25" />
+              <label for="0-25">$0 to $25</label>
+            </li>
+            <li>
+              <input id="25-50" type="checkbox" name="prange" value="25-50" />
+              <label for="25-50">$25 to $50</label>
+            </li>
+            <li>
+              <input id="50-100" type="checkbox" name="prange" value="50-100" />
+              <label for="50-100">$50 to $100</label>
+            </li>
+            <li>
+              <input id="100on" type="checkbox" name="prange" value="100+" />
+              <label for="100on">$100 onwards</label>
+            </li>
+          </ul>
+        </section>
+      </aside>
+      <main-content>
+        <input type="text" id="searchInput" placeholder="Search" />
+        <div class="filters">
+          <div class="filter active" data-category="all">All</div>
+          <div class="filter" data-category="men's clothing">Mens</div>
+          <div class="filter" data-category="women's clothing">Womens</div>
+          <div class="filter" data-category="jewelery">Jewellery</div>
+          <div class="filter" data-category="electronics">Electronics</div>
+        </div>
+        
+        <div id="productsContainer"></div>
+      </main-content>
+    </main>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <div id="cartTotal">Total: $0.00</div>
+        <button id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

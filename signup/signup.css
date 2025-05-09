@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Container & Form Styles */
+.container {
+    width: 100%;
+    max-width: 420px;
+    background-color: #000000;
+    border-radius: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+h1 {
+    text-align: center;
+    padding: 25px 0 15px;
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.logo {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.form-wrapper {
+    padding: 20px 40px 40px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ffffff;
+    border-radius: 0;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+input:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    background-color: #000000;
+    color: white;
+    border: 1px solid white;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #333333;
+}
+
+/* Message Styles */
+.error-message, 
+.success-message {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    min-height: 20px;
+}
+
+.error-message {
+    color: #ff6b6b;
+}
+
+.success-message {
+    color: #51cf66;
+}
+
+/* Form Footer */
+.form-footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.form-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .form-wrapper {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+}

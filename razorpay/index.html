@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Razorpay Button</title>
+  </head>
+  <body>
+    <button id="rzp-button1" class="payment-button">Pay with Razorpay</button>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+      document.getElementById("rzp-button1").onclick = function (e) {
+        var options = {
+          key: "rzp_test_PV1oQ0oMtgXOsq", // Remove the angle brackets
+          amount: 1000 * 100, // Amount in paise
+          currency: "INR",
+          name: "ShopCart Checkout",
+          description: "This is your order",
+          theme: {
+            color: "#000",
+          },
+          image: "https://www.mintformations.co.uk/blog/wp-content/uploads/2020/05/shutterstock_583717939.jpg",
+          handler: function (response) {
+            alert("Payment ID: " + response.razorpay_payment_id);
+            // Clear cart here
+            localStorage.removeItem("myCart");
+          }
+        };
+
+        var rzpy1 = new Razorpay(options);
+        rzpy1.open();
+        e.preventDefault();
+      };
+    </script>
+    
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height */
+        margin: 0;
+        background-color: #f9f9f9; /* optional background */
+    }
+    
+    .payment-button {
+        padding: 20px 40px;
+        background-color: Black;
+        color: white;
+        font-size: 24px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: background-color 0.3s ease;
+    }
+    
+    .payment-button:hover {
+        background-color: #3b6cd3;
+    }
+      
+    </style>
+  </body>
+</html>
