@@ -1,4 +1,5 @@
 # ShopCart - E-commerce Application
+![alt text](image.png)
 
 ## Overview
 ShopCart is a responsive e-commerce web application that allows users to browse, filter, and purchase products. The application includes user authentication, product filtering, cart management, and checkout functionality.
